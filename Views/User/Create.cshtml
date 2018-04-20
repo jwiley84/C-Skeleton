@@ -1,0 +1,39 @@
+@model skeleton.Models.RegisterViewModel
+ 
+<form asp-controller="User" asp-action="Register" method="post">
+    <br>
+    <br>
+    <h2>Register</h2>
+
+    <p><label asp-for="firstName"></label> <!-- label -->
+    <input asp-for="firstName"/> <!-- db form-->
+    <span asp-validation-for="firstName"></span><!-- matching validation--></p>
+
+    <p><label asp-for="lastName"></label>
+    <input asp-for="lastName"/>
+    <span asp-validation-for="lastName"></span></p>
+
+    <p><label asp-for="email"></label>
+    <input asp-for="email"/>
+    <span asp-validation-for="email"></span></p>
+
+    <p><label asp-for="password"></label>
+    <input asp-for="password"/>
+    <span asp-validation-for="password"></span></p>
+
+    <p><label asp-for="confirm"></label>
+    <input asp-for="confirm"/>
+    <span asp-validation-for="confirm"></span></p>
+
+    <p><button class="btn btn-sm btn-danger" type="submit">Create new User</button></p>
+</form>
+
+
+@if (ViewBag.errorMsg != null)
+{
+    <p></p>
+    <br>
+    <a href="/"><button class="btn btn-success">Go back</button></a>
+    <p>@ViewBag.errorMsg</p>
+}
+

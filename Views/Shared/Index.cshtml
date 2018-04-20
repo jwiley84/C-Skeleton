@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Test</h1>
+
+@foreach (var user in @ViewBag.AllUsers)
+{
+    <p>@user.firstName, @user.email</p>
+}

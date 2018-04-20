@@ -1,0 +1,36 @@
+@{
+  ViewData["Title"] = "Plan Game Session";
+}
+
+@model skeleton.Models.AddActivityViewModel
+<h1>Add an activity!</h1>
+
+
+<form asp-controller="Activity" asp-action="Create" method="post">
+    <br>
+    <p>
+        <label asp-for="title"></label>
+        <input asp-for="title">
+        <span asp-validation-for="title"></span>
+    </p>
+    <p>
+        <label asp-for="sessionDateTime"></label>
+        <input asp-for="sessionDateTime">
+        <span asp-validation-for="sessionDateTime"></span>
+        <label asp-for="duration"></label>
+        <input asp-for="duration">
+        <span asp-validation-for="duration"></span>
+        <select asp-for="durationAnnotation">
+            <option value="1">Days</option>
+            <option value="2">Hours</option>
+            <option value="3">Minutes</option>
+        </select>
+    </p>
+    <br>
+    <p>
+        <label asp-for="description"></label>
+        <textarea asp-for="description"></textarea>
+        <span asp-validation-for="description"></span></p>
+    <p><button class="btn btn-sm btn-danger" type="submit">Add Game Session</button></p>
+</form>
+

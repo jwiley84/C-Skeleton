@@ -1,0 +1,12 @@
+<br>
+<br>
+<h1>@ViewBag.thisActivity.title</h1>
+<p>Event Coordinator: Who knows? Find out when you get here!</p>
+<hr>
+<p>Description: @ViewBag.thisActivity.description</p>
+
+<p>Participants:</p>
+@foreach (var peep in @ViewBag.thisActivity.attendeesList)
+{
+    <p>@peep.user.firstName</p>
+}
